@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% if page == 'login' %}
+    <div class="container">
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <label>Username:</label>
+            <input type="text" name="username" placeholder="Enter Username" />
+
+            <label>Password:</label>
+            <input type="password" name="password" placeholder="Enter Password" />
+            <input type="submit" name="Login" />
+        </form>
+        <p>Haven't regsister yet?</p>
+        <a href="{% url 'tenant-register' %}">Rgister as Tenant</a><br>
+        <a href="{% url 'owner-register' %}">Rgister as Owner</a>
+    </div>
+    
+{% else %}
+    <div class="container">
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" name="tenant-register" />
+        </form>
+        <p>Already registered?</p>
+        <a href="{% url 'login' %}">Login as Tenant</a><br>
+        <a href="{% url 'login' %}">Login as Owner</a>
+    <div>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .home-container{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+</style>
+
+    <div class="container pt-4">
+    {% for room in rooms %}
+  
+    <h5>
+    <li>Id: {{ room.id }}, Owner: {{ room.owner }} Type: {{ room.category }}, Price Rs.{{ room.price}}, Locality: {{ room.location_area }}, Tenant Preference: {{ room.tenant_preference}}, Status: {{ room.room_status }}</li>
+    </h5>
+    {% endfor %}
+        <hr>
+        
+
+            <div class="text-center">
+            <li>Already Login? <a href="{% url 'create-room' %}">Add Room</a></li>
+            </div>           
+      
+            <div class="text-center">
+            <li> Have a Room to list for rent ?
+            <a href="{% url 'owner-register' %}">Register as Owner</a>
+            </li>
+            </div>
+    
+    </div>
+{% endblock content %}

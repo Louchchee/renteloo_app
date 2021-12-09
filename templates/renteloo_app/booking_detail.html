@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+
+
+
+    <dl>
+       <dt>Booking id</dt>
+            <dd>{{ booking.id }}</dd>
+        
+        <dt>Customer Name</dt>
+            <dd>{{ booking.user.username }}</dd>
+        <dt>Room id</dt>
+            <dd>{{ booking.room.id }}</dd>
+        <dt>Room Owner</dt>
+            <dd>{{ booking.room.owner }}</dd>
+        <dt>Room Location</dt>
+            <dd>{{ booking.room.location_area }}</dd>
+        <dt>Room Price</dt>
+            <dd>{{ booking.room.price}}</dd>
+        <dt>Room Type</dt>
+            <dd>{{ booking.room.category }}</dd>
+        <dt>Tenant Preference</dt>
+            <dd>{{ booking.room.tenant_preference }}</dd>
+        <dt>Room Facilities</dt>
+            <dd>{{ booking.room.facilities }}</dd>
+    </dl>
+</div>
+{% endblock content %}

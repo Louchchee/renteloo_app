@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        <p>Are you sure you want to delete room with id: "{{ obj.id }}"?</p>
+        <a href="/">Go Back</a>
+        <input type="submit" value="Confirm" />
+    </form>
+{% endblock content %}

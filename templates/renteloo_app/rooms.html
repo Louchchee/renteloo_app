@@ -1,0 +1,24 @@
+{% include 'base.html' %}
+
+{% block content %}
+
+<style>
+    .room-container {
+        display: grid;
+        grid-template-columns: 3fr 1fr
+    }
+</style>
+
+    <div class="container text-center">
+        <h3>Id: {{room.id}}</h3>
+        <h3>Owner: {{room.owner}}</h3>
+        <h3>Type: {{room.category}}</h3>
+        <h3>Price: {{room.price}}</h3>
+        <h3>Locality: {{room.location_area}}</h3>
+        <h3>Tenant Type: {{room.tenant_preference}}</h3>
+        <h3>Room Status: {{room.room_status}}</h3>
+        <h3>Description: {{room.facilities}}</h3>   
+    </div>
+
+     {% include 'renteloo_app/action_component.html' %}
+{% endblock content %}

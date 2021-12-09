@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    {% for booking in booked_room %}
+  
+        <li>Room id:{{booking.room.id }} - Booking id :{{ booking.id }} - User: {{ booking.user }} - Booking Date: {{ booking.booking_date }} <a href={% url 'booking-detail' booking.id %}>View Details</a></li>
+        
+    
+    {% endfor %}
+</div>
+{% endblock content %}
